@@ -27,8 +27,8 @@ body {
 }
 
 .calculator {
-    width: 25vw;
-    height: 50VH;
+    width: 400px;
+    height: 60VH;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
