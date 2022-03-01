@@ -2,6 +2,7 @@ let result = document.querySelector('#final');
 result.textContent = 0;
 let numbers = [];
 let totalResult = [];
+let numberOne = []
 
 export function display() {
     result.textContent = 0;
@@ -16,6 +17,8 @@ export function resetDisp() {
     document.querySelector('#reset').addEventListener('click', () => {
         result.textContent = 0;
         numbers = []
+        totalResult = []
+        numberOne = []
     })
 }
 
@@ -39,37 +42,23 @@ export function calculation(numberOne, numberTwo) {
 
         switch (e.target.id) {
             case 'add':
-                operator = '+';
-            break;
+                totalResult = Number(numberOne) + Number(totalResult);
+                console.log(totalResult);
+                break;
             case 'subtract':
-                operator = '-';
-            break;
+                totalResult = Number(numberOne) - Number(totalResult);
+                break;
             case 'multiply':
-                operator = '*';
-            break;
+                totalResult = Number(numberOne) * Number(totalResult);
+                break;
             case 'divide':
-                operator = '/';
-            break;
+                totalResult = Number(numberOne) / Number(totalResult);
+                break;
             default:
         }
     }))
 
     document.querySelector("#equal").addEventListener('click', () => {
-        switch (operator) {
-            case '+':
-                totalResult = Number(numberOne) + Number(numbers.join(''));
-                break;
-            case '-':
-                totalResult = Number(numberOne) - Number(numbers.join(''));
-                break;
-            case '*':
-                totalResult = Number(numberOne) * Number(numbers.join(''));
-                break;
-            case '/':
-                totalResult = Number(numberOne) / Number(numbers.join(''));
-                break;
-            default:          
-        }
         result.textContent = totalResult;
     })
 } 
