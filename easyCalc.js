@@ -22,7 +22,11 @@ export function resetDisp() {
 export function erase() {
     document.querySelector('#delete').addEventListener('click', () => {
         numbers.pop()
-        result.textContent = numbers.join('');
+        if(result.textContent === []) {
+            result.textContent = [0]
+        }else {
+            result.textContent = numbers.join('');
+        }
     })
 }
 let operator;
